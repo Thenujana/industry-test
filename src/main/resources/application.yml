@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/employeeDb;
+    url: jdbc:mysql://localhost:3306/employeeDb
     username: root
     password: 1234
 
-  jap:
+  jpa:
     hibernate:
       ddl-auto: create
