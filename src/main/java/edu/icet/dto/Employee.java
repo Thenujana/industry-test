@@ -1,5 +1,6 @@
 package edu.icet.dto;
 
+import edu.icet.util.Department;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -13,8 +14,8 @@ public class Employee {
     @NonNull
     private String name;
     @NonNull
-    private String department;
-    @NonNull
+    private Department department;
+   @NonNull
     private String email;
     private LocalDateTime createAt;
     private LocalDateTime updatedAt;

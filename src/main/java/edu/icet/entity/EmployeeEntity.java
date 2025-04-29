@@ -1,5 +1,6 @@
 package edu.icet.entity;
 
+import edu.icet.util.Department;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,7 +18,7 @@ public class EmployeeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String department;
+    private Department department;
     private String email;
     private LocalDateTime createAt;
     private LocalDateTime updatedAt;
