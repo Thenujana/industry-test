@@ -7,7 +7,7 @@ import edu.icet.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.bind.annotation.RequestBody;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,7 +19,7 @@ public class EmployeeServiceImpl implements EmployeeService {
  final EmployeeRepository repository;
 
     @Override
-    public void addEmployee(Employee employee) {
+    public void addEmployee(@RequestBody Employee employee) {
        repository.save(mapper.map(employee, EmployeeEntity.class));
     }
 
@@ -50,9 +50,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> searchByName(String name) {
-        List<Employee> employeeEntities = repository.findByName(name);
+        List<EmployeeEntity> employeeEntities = repository.findByName(name);
         return employeeEntities.stream()
                 .map(employeeEntity -> mapper.map(employeeEntity, Employee.class))
                 .collect(Collectors.toList());
     }
+
 }
